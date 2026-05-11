@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume – Lingeshwaran M K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f0f4f8;
+            color: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .resume {
+            background: #fff;
+            width: 210mm;
+            min-height: 297mm;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+            color: #fff;
+            padding: 35px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .header-left .title {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-top: 6px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .header-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        .contact-item .icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(56,189,248,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        /* Accent bar */
+        .accent-bar {
+            height: 5px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #f472b6);
+        }
+
+        /* Body */
+        .body {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 0;
+        }
+
+        /* Left Column */
+        .left-col {
+            background: #f8fafc;
+            padding: 30px 25px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        /* Right Column */
+        .right-col {
+            padding: 30px 30px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        /* Objective */
+        .objective-text {
+            font-size: 0.88rem;
+            color: #475569;
+            line-height: 1.75;
+        }
+
+        /* Education */
+        .edu-item {
+            margin-bottom: 16px;
+        }
+
+        .edu-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .edu-item .institution {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        .edu-item .year {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        .edu-item .score {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #38bdf8;
+            background: rgba(56,189,248,0.1);
+            padding: 1px 8px;
+            border-radius: 10px;
+            margin-top: 4px;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        /* Activities */
+        .activities-list {
+            list-style: none;
+        }
+
+        .activities-list li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 5px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .activities-list li::before {
+            content: '▸';
+            color: #38bdf8;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Projects / Certifications */
+        .proj-item, .cert-item {
+            margin-bottom: 18px;
+        }
+
+        .proj-item h4, .cert-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+
+        .proj-item h4 span, .cert-item h4 span {
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        .proj-item p, .cert-item p {
+            font-size: 0.84rem;
+            color: #64748b;
+            margin-top: 5px;
+            line-height: 1.65;
+        }
+
+        /* Achievements */
+        .achievements-list {
+            list-style: none;
+        }
+
+        .achievements-list li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 5px 0;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .achievements-list li::before {
+            content: '🏆';
+            flex-shrink: 0;
+            font-size: 0.78rem;
+            margin-top: 2px;
+        }
+
+        /* Divider between sections in right column */
+        .right-col .section + .section {
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 22px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .resume {
+                box-shadow: none;
+                width: 100%;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+
+        /* Print Button */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(56,189,248,0.4);
+            font-family: 'Inter', sans-serif;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(56,189,248,0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <h1>LINGESHWARAN M K</h1>
+            <div class="title">Student</div>
+            <div class="header-contact">
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <span>+91 82201 23194</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🔗</div>
+                    <span>github.com/lingesh12w</span>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">✉</div>
+                    <span>waranlingesh35@gmail.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accent Bar -->
+    <div class="accent-bar"></div>
+
+    <!-- Career Objective (full width) -->
+    <div style="padding: 22px 40px; border-bottom: 1px solid #e2e8f0; background: #fff;">
+        <div class="section-title" style="margin-bottom: 10px;">Career Objective</div>
+        <p class="objective-text">
+            To obtain an entry-level position in the IT field where I can apply my technical knowledge and programming skills effectively. I seek an opportunity to enhance my abilities through hands-on experience and continuous learning. I am committed to delivering quality work and contributing to team success. This position will enable me to grow professionally while supporting organizational goals.
+        </p>
+    </div>
+
+    <!-- Two Column Body -->
+    <div class="body">
+
+        <!-- LEFT COLUMN -->
+        <div class="left-col">
+
+            <!-- Education -->
+            <div class="section">
+                <div class="section-title">Education</div>
+
+                <div class="edu-item">
+                    <h4>B.Sc – Software Systems</h4>
+                    <div class="institution">Kongu Engineering College</div>
+                    <div class="year">2023 – 2026</div>
+                    <span class="score">CGPA: 7.77</span>
+                </div>
+
+                <div class="edu-item">
+                    <h4>Higher Secondary (12th)</h4>
+                    <div class="institution">Kongu Vellalar Matric HR. Sec. School</div>
+                    <div class="year">2022 – 2023</div>
+                    <span class="score">79%</span>
+                </div>
+
+                <div class="edu-item">
+                    <h4>Secondary (10th)</h4>
+                    <div class="institution">Kongu Vellalar Matric HR. Sec. School</div>
+                    <div class="year">2020 – 2021</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <div class="section-title">Skills</div>
+                <div class="skills-list">
+                    <span class="skill-badge">C</span>
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">HTML & CSS</span>
+                    <span class="skill-badge">Data Structure</span>
+                    <span class="skill-badge">DBMS</span>
+                </div>
+            </div>
+
+            <!-- Activities -->
+            <div class="section">
+                <div class="section-title">Activities</div>
+                <ul class="activities-list">
+                    <li>State-Level Paper Presentation – Ethical Hacking</li>
+                    <li>Photography Club, Pasumaivanan Club</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-col">
+
+            <!-- Academic Projects -->
+            <div class="section">
+                <div class="section-title">Academic Projects</div>
+
+                <div class="proj-item">
+                    <h4>Potato Leaf Disease Classification <span>(Hybrid Deep Learning)</span></h4>
+                    <p>Developed a hybrid deep learning model using CNN-based feature extraction and ML classifiers for accurate potato leaf disease classification.</p>
+                </div>
+
+                <div class="proj-item">
+                    <h4>Electricity Management System <span>(Mobile Application Development)</span></h4>
+                    <p>Built a mobile application to manage electricity store data efficiently.</p>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="section">
+                <div class="section-title">Certifications</div>
+
+                <div class="cert-item">
+                    <h4>Robotics – One Credit Course (2024)</h4>
+                    <p>Focusing on the fundamentals of robotics, including sensors, actuators, and basic automation principles. Gained hands-on experience in designing and programming simple robotic systems.</p>
+                </div>
+
+                <div class="cert-item">
+                    <h4>Completed a Course on Internet of Things (IoT)</h4>
+                    <p>Learning core concepts of connected devices, sensors, and data communication. Gained practical experience in designing and implementing basic IoT applications.</p>
+                </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="section">
+                <div class="section-title">Achievement</div>
+                <ul class="achievements-list">
+                    <li>2nd Prize (₹15,000) – Boardroom Conclave, Synergy School of Management</li>
+                    <li>1st Prize – Coding Contest (Quantum 2K24)</li>
+                    <li>2nd Prize – Debate Competition</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨 Print / Save as PDF</button>
+
+</body>
+</html>
